@@ -1,51 +1,50 @@
 cadena1 = "__servidor1"
 cadena2 = "3servidor"
-cadena3 = "__s1"
-cadena4 = "_jsn2"
+
 
 def validarAFD(cadena):
+    print()
+    print("Cadena a evaluar: ",cadena)
+    print("Resultado:")
     estado = 0
 
-    for i in range(len(cadena)):
-        print(estado)
+    for caracter in cadena:        
         if estado == 0:
-            if cadena[i] == "_":
+            if caracter == "_":
                 estado = 1
-            elif cadena[i].isalpha():
+            elif caracter.isalpha():
                 estado = 2
             else:
                 print("Cadena incorrecta")
                 return        
-        if estado == 1:
-            if cadena[i] == "_":
+        elif estado == 1:            
+            if caracter == "_":
                 estado = 1
-            elif cadena[i].isalpha():
+            elif caracter.isalpha():
                 estado = 3
-            else :
+            else:
                 print("Cadena incorrecta")
                 return
-        if estado == 2:
-            if cadena[i].isalpha:
+        elif estado == 2:
+            if caracter.isalpha():
                 estado = 2
-            elif cadena[i].isdigit():
+            elif caracter.isdigit():
                 estado = 4
             else:
                 print("Cadena incorrecta")
                 return
-        if estado == 3:
-            if cadena[i].isdigit():
+        elif estado == 3:
+            if caracter.isdigit():
                 estado = 4
             else:
                 print("Cadena incorrecta")
-                return
-        if estado == 4:
+                return  
+        elif estado == 4:
             print("Cadena incorrecta")
-            return
+            return       
     print("¡Cadena aceptada!")
 
         
 
 validarAFD(cadena1)
 validarAFD(cadena2)
-validarAFD(cadena3)
-validarAFD(cadena4)
